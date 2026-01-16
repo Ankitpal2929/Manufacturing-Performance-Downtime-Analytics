@@ -1,0 +1,74 @@
+Project Objective
+The objective of this project is to design an industry-grade Power BI dashboard that provides a comprehensive view of manufacturing performance, line efficiency, and downtime. The dashboard enables management to identify efficiency gaps, operator performance issues, and key downtime drivers for informed decision-making.
+________________________________________
+Data Sources & Understanding
+The project uses multiple manufacturing datasets, including:
+•	Line Productivity data (Production Time, Net Production Time, Operator)
+•	Line Downtime data (Downtime Minutes, Downtime Factors, Batch)
+•	Product Master data
+•	Downtime Factor reference data
+These datasets represent real-world manufacturing KPIs commonly used in production analytics.
+________________________________________
+Data Cleaning & Transformation (Power Query)
+Power Query Editor was used extensively to prepare the data:
+•	Removed null values, duplicates, and inconsistent records
+•	Corrected data types (numeric, text, time-based fields)
+•	Standardized column names for clarity and modeling
+•	Created aggregated views using Group By (Operator-wise Production & Downtime)
+•	Applied Append Queries to combine multi-period datasets
+•	Performed Merge Queries (Joins) between:
+o	Line Productivity ↔ Products
+o	Line Productivity ↔ Line Downtime
+o	Line Downtime ↔ Downtime Factors
+This ensured clean, structured, and analysis-ready data.
+________________________________________
+Data Modeling
+A clean star-schema model was designed:
+•	Fact Tables: Line Productivity, Line Downtime
+•	Dimension Tables: Operators, Products, Downtime Factors
+Proper relationships and cardinality were defined to enable accurate cross-filtering and optimal performance.
+________________________________________
+DAX Measures & Calculations
+Key business metrics were created using DAX:
+•	Total Production Time
+•	Total Downtime
+•	Net Production Time
+•	Overall Line Efficiency (%)
+•	Target Efficiency comparison
+•	Funnel stage values using DATATABLE
+These measures power all KPIs and advanced visuals.
+________________________________________
+Dashboard Structure & Visual Design
+The report is divided into three professional pages:
+1. Executive Summary
+•	KPI Cards (Production Time, Efficiency %, Downtime)
+•	Efficiency vs Target Gauge
+•	Funnel Chart (Planned → Production → Downtime → Net Production)
+•	Advanced clustered column chart for efficiency vs downtime
+•	Executive insight text panel for management interpretation
+2. Operator Performance
+•	Operator-wise efficiency comparison
+•	Trend analysis by operator
+•	Scatter chart: Efficiency vs Downtime
+•	Interactive slicers for operators
+3. Downtime Analysis
+•	Downtime factor distribution (Donut chart)
+•	Batch-level downtime impact
+•	Product-wise downtime comparison
+•	Root-cause focused visuals
+________________________________________
+Advanced Features Used
+•	Interactive slicers and filters
+•	Navigation buttons
+•	Custom tooltips
+•	Conditional formatting
+•	Insight panels for business interpretation
+•	Professional layout, spacing, and theming
+________________________________________
+Business Impact
+This dashboard helps stakeholders:
+•	Identify low-performing operators
+•	Detect major downtime contributors
+•	Track efficiency against targets
+•	Improve production planning and operational efficiency
+
